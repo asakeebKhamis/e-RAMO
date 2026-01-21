@@ -30,7 +30,7 @@ export default function MainHowItWorks() {
   const colors = ["bg-amber-100", "bg-orange-100", "bg-yellow-100"];
 
   return (
-    <section className="max-w-4xl mx-auto space-y-10 text-[#1A2921]">
+    <section className="max-w-4xl mx-auto px-4 md:px-0 space-y-10 text-[#1A2921]">
       {/* Header */}
       <div className="text-center">
         <h2 className="text-5xl font-bold text-foreground mb-4 font-dm-sans">

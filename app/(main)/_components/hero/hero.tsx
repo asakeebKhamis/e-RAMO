@@ -38,92 +38,83 @@ export default function MainHero() {
   ];
 
   return (
-    <div className="my_container relative w-full h-150 flex mb-40">
-      {/* Background Image */}
+    <section className="my_container relative w-full min-h-130 sm:min-h-155 mb-48d">
+      {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden"
-        style={{
-          backgroundImage: 'url("/images/hero_bg.png")',
-        }}
+        className="absolute inset-0 bg-cover bg-center rounded-2xl overflow-hidden"
+        style={{ backgroundImage: 'url("/images/hero_bg.png")' }}
       >
-        <div className="absolute inset-0 bg-linear-to-b from-[#3F3533] to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-[#3F3533] to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="z-10 w-full px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto mt-30">
-          {/* Main Heading */}
-          <h1 className="font-dm-sans text-[#F8E9D9] text-center text-4xl sm:text-5xl lg:text-6xl font-bold mb-12 text-balance leading-tight">
-            Office That Fit You
-            <br />
-            Creative Way To Work
-          </h1>
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32">
+        {/* Heading */}
+        <h1 className="text-center text-[#F8E9D9] font-bold text-3xl sm:text-5xl lg:text-6xl leading-tight mb-12">
+          Office That Fit You
+          <br />
+          Creative Way To Work
+        </h1>
 
-          {/* Card Section */}
-          <div className="bg-white rounded-2xl absolute left-20 right-20 -bottom-15 overflow-hidden">
-            {/* Tabs */}
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 p-8">
-              {categories.map((category) => {
-                const isActive = activeTab === category.id;
-                return (
-                  <button
-                    key={category.id}
-                    onClick={() => setActiveTab(category.id)}
-                    className={`flex items-center gap-2 px-6 py-3 text-base sm:text-base font-medium transition-al rounded-lg ${
+        {/* Card */}
+        <div className="relative bg-white rounded-2xl max-w-6xl mx-auto overflow-hidden shadow-lg -bottom-10  sm:-bottom-25 md:-bottom-35">
+          {/* Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 p-4 sm:p-6">
+            {categories.map((category) => {
+              const isActive = activeTab === category.id;
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveTab(category.id)}
+                  className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 text-sm sm:text-base rounded-lg transition w-full sm:w-fit
+                    ${
                       isActive
-                        ? "text-main bg-[#FAFFF7] border-b border-main font-semibold"
-                        : "text-muted-foreground bg-[#F7F8F9]"
+                        ? "bg-[#FAFFF7] text-main border-b-2 border-main font-semibold"
+                        : "bg-[#F7F8F9] text-muted-foreground"
                     }`}
-                  >
-                    <div className="relative size-6">
-                      <Image
-                        src={category.icon}
-                        alt="Cheer Location"
-                        fill
-                        className={`rounded object-cover ${!isActive ? "grayscale" : ""}`}
-                      />
-                    </div>
-                    <span>{category.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Search Section */}
-            <div className=" bg-[#FFFAF5] p-8">
-              <div className="w-4xl mx-auto flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
-                {/* Search Input */}
-                <InputGroup className="bg-white h-15 shadow-none border-0 rounded-2xl">
-                  <InputGroupInput placeholder="Search Here..." />
-                  <InputGroupAddon>
-                    <Search className="text-[#B49D97] size-5" />
-                  </InputGroupAddon>
-                  <InputGroupButton className="flex items-center m-1 cursor-pointer">
-                    <div className="relative size-4">
-                      <Image
-                        src={"/images/fi_17065265.svg"}
-                        alt="Cheer Location"
-                        fill
-                      />
-                    </div>
-                    <span className="text-xs underline underline-offset-2 text-primary font-semibold">
-                      Search Nearby
-                    </span>
-                  </InputGroupButton>
-                </InputGroup>
-
-                {/* Search Button */}
-                <Button
-                  size={"lg"}
-                  className="w-45 h-14 border-0 bg-main hover:bg-main/90 text-lg rounded-lg"
                 >
-                  Search
-                </Button>
-              </div>
+                  <div className="relative size-5 sm:size-6">
+                    <Image
+                      src={category.icon}
+                      alt={category.label}
+                      fill
+                      className={!isActive ? "grayscale" : ""}
+                    />
+                  </div>
+                  <span className="whitespace-nowrap">{category.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Search */}
+          <div className="bg-[#FFFAF5] p-4 sm:p-6">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-3">
+              <InputGroup className="bg-white h-14 rounded-2xl">
+                <InputGroupInput placeholder="Search Here..." />
+                <InputGroupAddon>
+                  <Search className="size-5 text-[#B49D97]" />
+                </InputGroupAddon>
+                <InputGroupButton className="flex items-center gap-2 m-1">
+                  <div className="relative size-4">
+                    <Image src="/images/fi_17065265.svg" alt="Nearby" fill />
+                  </div>
+                  <span className="text-xs font-semibold underline text-primary hidden md:block">
+                    Search Nearby
+                  </span>
+                </InputGroupButton>
+              </InputGroup>
+
+              <Button
+                size="lg"
+                className="h-14 w-full md:w-44 bg-main hover:bg-main/90 text-base rounded-lg"
+              >
+                Search
+              </Button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

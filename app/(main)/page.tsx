@@ -5,7 +5,12 @@ import MainListings from "./_components/listings/listings";
 import MainSharedSpace from "./_components/shared-space/shared-space";
 import MainHowItWorks from "./_components/how-it-work/how-it-work";
 import MainHybridWorking from "./_components/hybrid-working/hybrid-working";
-import Pricing from "./_components/pricing/pricing";
+import MainPricing from "./_components/pricing/pricing";
+import MainArticles from "./_components/articles/articles";
+import MainContact from "./_components/contact/contact";
+import MainTrusted from "./_components/trusted/trusted";
+import MainSubscribe from "./_components/subscribe/subscribe";
+import MainFooter from "./_components/footer/footer";
 
 export default function Main() {
   return (
@@ -19,8 +24,12 @@ export default function Main() {
       <MainSharedSpace />
       <MainHowItWorks />
       <MainHybridWorking />
-      <Pricing />
-      <p className="">Main</p>
+      <MainPricing />
+      <MainArticles />
+      <MainContact />
+      <MainTrusted />
+      <MainSubscribe />
+      <MainFooter />
     </div>
   );
 }

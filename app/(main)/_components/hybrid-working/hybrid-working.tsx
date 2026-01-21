@@ -7,7 +7,7 @@ export default function MainHybridWorking() {
     <section className="my_container space-y-8">
       {/* Heading */}
       <div className="text-center space-y-2">
-        <h2 className="text-3xl font-semibold font-dm-sans">
+        <h2 className="text-2xl lg:text-3xl font-semibold font-dm-sans">
           Hybrid working can work for you
         </h2>
         <p className="text-gray-500 text-xl">
@@ -30,16 +30,16 @@ export default function MainHybridWorking() {
             />
             {/* Green bg */}
             {i === 1 && (
-              <div className="absolute bg-main rounded-t-2xl w-full h-5 start-1/2 -translate-1/2 -bottom-12" />
+              <div className="absolute bg-main rounded-t-2xl w-full h-5 start-1/2 -translate-1/2 -bottom-12 hidden md:block" />
             )}
           </div>
         ))}
       </div>
 
       {/* App promo */}
-      <div className="bg-[#FDF8F2] rounded-xl pt-8 px-8 flex flex-col md:flex-row items-center gap-6 md:gap-12 relative">
+      <div className="bg-[#FDF8F2] rounded-xl py-8 md:pt-8 px-8 flex flex-col md:flex-row items-center gap-6 md:gap-12 relative">
         {/* Phone image */}
-        <div className="w-full h-125 max-w-sm relative">
+        <div className="w-full h-125 max-w-sm relative hidden md:block">
           <Image
             src="/images/iphone.png"
             alt="Phone with app"
@@ -57,7 +57,7 @@ export default function MainHybridWorking() {
             Hybrid working offers you the freedom to work closer to clients,
             colleagues or home.
           </p>
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap items-center justify-center gap-x-4">
             <Link href="#" className="relative w-40 h-15.75">
               <Image
                 src="/images/google.png"
